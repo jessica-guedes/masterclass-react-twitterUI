@@ -4,6 +4,7 @@ import { Hash, House, Bell, FileText, BookmarkSimple, User, DotsThreeCircle, Env
 
 import './global.css';
 import twitterLogo from './assets/logo.tweet.svg'
+import { Tweet } from './components/Tweet';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -56,6 +57,21 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               Home
               <Sparkle />
             </div>
+
+            <form className='new-tweet-form'>
+              <label htmlFor="tweet">
+                <img src="https://github.com/jessica-guedes.png" alt="Jessica Guedes" />
+                <textarea  id="tweet" placeholder="What's happening?" />
+              </label>
+
+              <button type='submit'>Tweet</button>
+            </form>
+
+            <div className="separator" />
+
+            <Tweet />
+            <Tweet />
+            <Tweet />
           </main>
       </div>
     </div>
