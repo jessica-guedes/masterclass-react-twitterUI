@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom/client'
 
 import './global.css';
 import { Tweet } from './components/Tweet';
-import { Sparkle } from 'phosphor-react';
 import { Sidebar } from './components/Sidebar';
 import { Header } from './components/Header';
 import { Separator } from './components/Separator';
+
+const tweets = [
+  'Meu primeiro tweet!',
+  'Teste',
+  'Deu certo tweetar!'
+]
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -30,9 +35,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 
             <Separator />
  
-            <Tweet />
-            <Tweet />
-            <Tweet />
+            {tweets.map(tweet => {
+              return <Tweet key={tweet} content={tweet} />
+            })}
           </main>
       </div>
     </div>
