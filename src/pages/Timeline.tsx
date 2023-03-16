@@ -5,9 +5,9 @@ import { Tweet } from "../components/Tweet"
 
 import './Timeline.css'
 
-let  newTweet = ''
 
 export function Timeline(){
+  const [newTweet, setNewTweet] = useState('')
 
   const [tweets, setTweets] = useState([
     'Meu primeiro tweet!',
@@ -19,9 +19,11 @@ export function Timeline(){
     event.preventDefault()
 
     setTweets([newTweet, ...tweets])
+    setNewTweet('')
   }
 
   return(
+
     <main className='timeline'>
             
       <Header title='Home'/>
@@ -33,8 +35,9 @@ export function Timeline(){
           <textarea  
             id="tweet" 
             placeholder="What's happening?" 
+            value={newTweet}
             onChange={(event) => {
-              newTweet = event.target.value
+              setNewTweet(event.target.value)
             }}
           />
         </label>
